@@ -1,0 +1,401 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Drawing">
+    <meta name="keywords" content="Drawing">
+    <link rel="stylesheet" href="Css/style.css">
+    <title>Drawing</title>
+    <link rel="shortcut icon" type="image/jpg" href="Svg/draw.svg" />
+</head>
+
+<body class="body-background">
+    <div class="background-overlay dis-none"></div>
+
+    <div class="content">
+        <div class="tools-holder">
+            <div class="toolbar">
+                <span class="grid-row-1">
+                    <a class="toolbar-head file">File</a>
+                    <div class="file-list list dis-none">
+                        <span class="list-items file-new new">
+                            <a><object class="list-icon" data="Svg/new.svg" type="image/svg+xml"></object></a>
+                            <h4 class="icon-text">New</h4>
+                        </span>
+                        <span class="list-items file-open">
+                            <a class="open file-open"><object class="list-icon" data="Svg/open.svg"
+                                    type="image/svg+xml"></object></a>
+                            <input class="file-open file-open-button" type="file" aria-label="File browser example">
+                        </span>
+
+                        <!-- <span class="list-items file-save">
+                            <a class="save file-save"><object class="list-icon" data="Svg/save.svg"
+                                    type="image/svg+xml"></object></a>
+                            <h4 class="icon-text file-save">Save</h4>
+                        </span>
+                        <span class="list-items file-save-as">
+                            <a class="save-as"><object class="list-icon" data="Svg/save-as.svg"
+                                    type="image/svg+xml"></object></a>
+                            <h4 class="icon-text">Save as</h4>
+                        </span>
+                        <span class="list-items file-print">
+                            <a class="print"><object class="list-icon" data="Svg/print.svg"
+                                    type="image/svg+xml"></object></a>
+                            <h4 class="icon-text">Print</h4>
+                        </span>
+                        <span class="list-items file-exit">
+                            <a class="exit"><object class="list-icon" data="Svg/exit.svg"
+                                    type="image/svg+xml"></object></a>
+                            <h4 class="icon-text">Exit</h4>
+                        </span> -->
+                    </div>
+                    <a class="toolbar-head home menu-active">Home</a>
+                    <a class="toolbar-head text-view">text</a>
+                </span>
+                <span class="font-fam f">
+                    <select id="familySelect" class="font-fam-text f">
+                        <option class="family-selection" value="Nunito-Light">Nunito-L</option>
+                        <option class="family-selection" value="Nunito-Bold">Nunito-B</option>
+                        <option class="family-selection" value="Nunito-Italic">Nunito-I</option>
+                    </select>
+                </span>
+                <span class="font-siz f">
+                    <select id="sizeSelect" class="font-siz-text f">
+                        <option class="size-selection" value="20">20</option>
+                        <option class="size-selection" value="24">24</option>
+                        <option class="size-selection" value="36">36</option>
+                        <option class="size-selection" value="42">42</option>
+
+                    </select>
+                </span>
+                <span class="paste pst">
+                    <a class="object-link pst">
+                        <object class="bigger-icons" data="Svg/paste.svg" type="image/svg+xml"></object>
+                    </a>
+                    <h4 class="bigger-text pst">Paste</h4>
+                </span>
+                <span class="cut cuts">
+                    <a class="object-link cuts"><object class="medium-icons" data="Svg/cut.svg"
+                            type="image/svg+xml"></object></a>
+                    <h4 class="medium-text cuts">Cut</h4>
+                </span>
+                <span class="copy cpy">
+                    <a class="object-link cpy"><object class="medium-icons" data="Svg/copy.svg"
+                            type="image/svg+xml"></object></a>
+                    <h4 class="medium-text cpy">Copy</h4>
+                </span>
+                <span class="select slct">
+                    <a class="object-link slct"><object class="bigger-icons" data="Svg/select.svg"
+                            type="image/svg+xml"></object></a>
+                    <h4 class="bigger-text slct">Select</h4>
+                </span>
+                <span class="resize">
+                    <a class="object-link"><object class="medium-icons" data="Svg/resize.svg"
+                            type="image/svg+xml"></object></a>
+                    <h4 class="medium-text">Resize</h4>
+                </span>
+                <span class="rotate">
+                    <a class="object-link"><object class="medium-icons" data="Svg/rotate.svg"
+                            type="image/svg+xml"></object></a>
+                    <h4 class="medium-text arrow-select-right">Rotate</h4>
+                    <div class="rotate-list list dis-none">
+                        <span class="list-items rotate-right-90-deg">
+                            <a class="rotate-right-90"><object class="list-icon" data="Svg/rotate-right-90.svg"
+                                    type="image/svg+xml"></object></a>
+                            <h4 class="icon-text rotate-right-90-deg">Rotate right 90</h4>
+                        </span>
+                        <span class="list-items rotate-left-90-deg">
+                            <a class="rotate-left-90 rotate-left-90-deg"><object class="list-icon rotate-left-90-deg"
+                                    data="Svg/rotate-left-90.svg" type="image/svg+xml"></object></a>
+                            <h4 class="icon-text rotate-left-90-deg">Rotate left 90</h4>
+                        </span>
+
+                        <!-- <span class="list-items rotate-180-deg">
+                            <a class="rotate-180 rotate-180-deg"><object class="list-icon" data="Svg/rotate-180.svg"
+                                    type="image/svg+xml"></object></a>
+                            <h4 class="icon-text rotate-180-deg">Rotate 180</h4>
+                        </span> -->
+                        <span class="list-items rotate-flip-ver">
+                            <a class="flip-vertical rotate-flip-ver"><object class="list-icon"
+                                    data="Svg/flip-vertical.svg" type="image/svg+xml"></object></a>
+                            <h4 class="icon-text rotate-flip-ver">Flip vertical</h4>
+                        </span>
+                        <span class="list-items rotate-flip-hor">
+                            <a class="flip-horizontal rotate-flip-hor"><object class="list-icon"
+                                    data="Svg/flip-horizontal.svg" type="image/svg+xml"></object></a>
+                            <h4 class="icon-text rotate-flip-hor">Flip horizontal</h4>
+                        </span>
+                    </div>
+                </span>
+                <span class="pen">
+                    <a class="object-link"><object class="tools-icons" data="Svg/pen.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="eraser">
+                    <a class="object-link"><object class="tools-icons" data="Svg/eraser.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="filler fillers">
+                    <a class="object-link fillers"><object class="tools-icons fillers" data="Svg/filler.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="color-picker">
+                    <a class="object-link"><object class="tools-icons" data="Svg/color-picker.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="text">
+                    <a class="object-link"><object class="tools-icons" data="Svg/text.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="zoom">
+                    <a class="object-link"><object class="tools-icons" data="Svg/zoom.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="brush arrow-select-down">
+                    <a class="object-link"><object class="bigger-icons" data="Svg/brush-1.svg"
+                            type="image/svg+xml"></object></a>
+                    <h4 class="bigger-text">Brushes</h4>
+                    <div class="brush-list list dis-none">
+                        <span class="list-items brush-option-marker marker">
+                            <a class="brush-marker marker"><object class="list-icon" data="Svg/brush-marker.svg"
+                                    type="image/svg+xml"></object></a>
+                            <h4 class="icon-text marker">Marker</h4>
+                        </span>
+                        <span class="list-items brush-option-oil oil">
+                            <a class="brush-oil oil"><object class="list-icon" data="Svg/brush-oil.svg"
+                                    type="image/svg+xml"></object></a>
+                            <h4 class="icon-text oil">Oil</h4>
+                        </span>
+                        <span class="list-items brush-option-pencil">
+                            <a class="brush-pencil brush-option-pencil"><object class="list-icon"
+                                    data="Svg/brush-pencil.svg" type="image/svg+xml"></object></a>
+                            <h4 class="icon-text brush-option-pencil">Natural Pencil</h4>
+                        </span>
+                        <span class="list-items brush-option-watercolor watercolor">
+                            <a class="brush-watercolor watercolor"><object class="list-icon"
+                                    data="Svg/brush-watercolor.svg" type="image/svg+xml"></object></a>
+                            <h4 class="icon-text watercolor">Watercolor</h4>
+                        </span>
+                    </div>
+                </span>
+                <span class="tool-background"></span>
+                <span class="line">
+                    <a class="object-link"><object class="shape-icons" data="Svg/line.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="right-triangle">
+                    <a class="object-link"><object class="shape-icons" data="Svg/right-triangle.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="down-arrow">
+                    <a class="object-link"><object class="shape-icons" data="Svg/down-arrow.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="diamond">
+                    <a class="object-link"><object class="shape-icons" data="Svg/diamond.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="four-point-star">
+                    <a class="object-link"><object class="shape-icons" data="Svg/four-pointed-star.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="oval">
+                    <a class="object-link"><object class="shape-icons" data="Svg/oval.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="pentagon">
+                    <a class="object-link"><object class="shape-icons" data="Svg/pentagon.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="five-point-star">
+                    <a class="object-link"><object class="shape-icons" data="Svg/five-pointed-star.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="rectangle">
+                    <a class="object-link"><object class="shape-icons" data="Svg/rectangle.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="hexagon">
+                    <a class="object-link"><object class="shape-icons" data="Svg/hexagon.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="six-point-star">
+                    <a class="object-link"><object class="shape-icons" data="Svg/six-point-star.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="circle">
+                    <a class="object-link"><object class="shape-icons" data="Svg/circle.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="right-arrow">
+                    <a class="object-link"><object class="shape-icons" data="Svg/right-arrow.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="left-arrow">
+                    <a class="object-link"><object class="shape-icons" data="Svg/left-arrow.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="triangle">
+                    <a class="object-link"><object class="shape-icons" data="Svg/triangle.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="up-arrow">
+                    <a class="object-link"><object class="shape-icons" data="Svg/up-arrow.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="heart">
+                    <a class="object-link"><object class="shape-icons" data="Svg/heart.svg"
+                            type="image/svg+xml"></object></a>
+                </span>
+                <span class="outline">
+                    <a class="object-link"><object class="medium-icons" data="Svg/outline.svg"
+                            type="image/svg+xml"></object></a>
+                    <h4 class="medium-text arrow-select-right">Outline</h4>
+                    <div class="outline-list list dis-none">
+                        <span class="list-items outline-option-no-color outline-no-color">
+                            <a class="no-color outline-no-color"><object class="list-icon" data="Svg/no-color.svg"
+                                    type="image/svg+xml"></object></a>
+                            <h4 class="icon-text outline-no-color">No color</h4>
+                        </span>
+                        <span class="list-items outline-option-solid-color outline-solid-color">
+                            <a class="solid-color outline-solid-color"><object class="list-icon"
+                                    data="Svg/solid-color.svg" type="image/svg+xml"></object></a>
+                            <h4 class="icon-text outline-solid-color">Solid color</h4>
+                        </span>
+                    </div>
+                </span>
+                <span class="fills">
+                    <a class="object-link"><object class="medium-icons" data="Svg/fill.svg"
+                            type="image/svg+xml"></object></a>
+                    <h4 class="medium-text arrow-select-right">Fill</h4>
+                    <div class="fills-list list dis-none">
+                        <span class="list-items fills-option-no-color fills-no-color">
+                            <a class="no-color fills-no-color"><object class="list-icon" data="Svg/no-color.svg"
+                                    type="image/svg+xml"></object></a>
+                            <h4 class="icon-text fills-no-color">No color</h4>
+                        </span>
+                        <span class="list-items fills-option-solid-color fills-solid-color">
+                            <a class="solid-color fills-solid-color"><object class="list-icon"
+                                    data="Svg/solid-color.svg" type="image/svg+xml"></object></a>
+                            <h4 class="icon-text fills-solid-color">Solid color</h4>
+                        </span>
+                        <span class="list-items fills-option-marker fills-marker">
+                            <a class="brush-marker fills-marker"><object class="list-icon" data="Svg/brush-marker.svg"
+                                    type="image/svg+xml"></object></a>
+                            <h4 class="icon-text fills-marker">Marker</h4>
+                        </span>
+                    </div>
+                </span>
+                <span class="size arrow-select-down">
+                    <a class="object-link"><object class="bigger-icons" data="Svg/size.svg"
+                            type="image/svg+xml"></object></a>
+                    <h4 class="bigger-text">Size</h4>
+                    <div class="size-list dis-none">
+                        <a class="size-1"><object class="size-1" data="Svg/size-1.svg"
+                                type="image/svg+xml"></object></a>
+                        <a class="size-2"><object class="size-2" data="Svg/size-2.svg"
+                                type="image/svg+xml"></object></a>
+                        <a class="size-3"><object class="size-3" data="Svg/size-3.svg"
+                                type="image/svg+xml"></object></a>
+                        <a class="size-4"><object class="size-4" data="Svg/size-4.svg"
+                                type="image/svg+xml"></object></a>
+                    </div>
+                </span>
+                <span class="colors-picker color-one co active">
+                    <span class="color-one-bg small-empty-box co"></span>
+                    <h4 class="bigger-text co">Color<br>1</h4>
+                </span>
+                <span class="colors-picker color-two ct">
+                    <span class="color-two-bg small-empty-box ct"></span>
+                    <h4 class="bigger-text ct">Color<br>2</h4>
+                </span>
+                <span class="colors-boxes colors-1" data-color="#000000">
+                </span>
+                <span class="colors-boxes colors-2" data-color="#ffffff">
+                </span>
+                <span class="colors-boxes colors-3" data-color="#34568B">
+                </span>
+                <span class="colors-boxes colors-4" data-color="#FF6F61">
+                </span>
+                <span class="colors-boxes colors-5" data-color="#6B5B95">
+                </span>
+                <span class="colors-boxes colors-6" data-color="#88B04B">
+                </span>
+                <span class="colors-boxes colors-7" data-color="#FDAC53">
+                </span>
+                <span class="colors-boxes colors-8" data-color="#9BB7D4">
+                </span>
+                <span class="colors-boxes colors-9" data-color="#B55A30">
+                </span>
+                <span class="colors-boxes colors-10" data-color="#F5DF4D">
+                </span>
+                <span class="colors-boxes colors-11" data-color="#A0DAA9">
+                </span>
+                <span class="colors-boxes colors-12" data-color="#E9897E">
+                </span>
+                <span class="colors-boxes colors-13" data-color="#00A170">
+                </span>
+                <span class="colors-boxes colors-14" data-color="#926AA6">
+                </span>
+                <span class="colors-boxes colors-15" data-color="#D2386C">
+                </span>
+                <span class="colors-boxes colors-16" data-color="#CD212A">
+                </span>
+                <span class="colors-boxes colors-17" data-color="#FFA500">
+                </span>
+                <span class="colors-boxes colors-18" data-color="#56C6A9">
+                </span>
+                <span class="colors-boxes colors-19" data-color="#4B5335">
+                </span>
+                <span class="colors-boxes colors-20" data-color="#798EA4">
+                </span>
+                <span class="colors-boxes colors-21" data-color="#FA7A35">
+                </span>
+                <span class="colors-boxes colors-22" data-color="#EDD59E">
+                </span>
+                <span class="colors-boxes colors-23" data-color="#E8A798">
+                </span>
+                <span class="colors-boxes colors-24" data-color="#6B5876">
+                </span>
+                <span class="colors-boxes colors-25" data-color="#000000">
+                </span>
+                <span class="colors-boxes colors-26" data-color="#000000">
+                </span>
+                <span class="colors-boxes colors-27" data-color="#000000">
+                </span>
+                <span class="colors-boxes colors-28" data-color="#000000">
+                </span>
+                <span class="colors-boxes colors-29" data-color="#000000">
+                </span>
+                <span class="colors-boxes colors-30" data-color="#000000">
+                </span>
+                <!-- <span class="edit-color">
+                    <a class="object-link"><object class="bigger-icons" data="Svg/edit-color.svg"
+                            type="image/svg+xml"></object></a>
+                    <h4 class="bigger-text"><br><br>Edit colors</h4>
+                </span> -->
+                <span class="title-name-style clipboard">
+                    <h4 class="icon-text">Clipboard</h4>
+                </span>
+                <span class="title-name-style image">
+                    <h4 class="icon-text">Image</h4>
+                </span>
+                <span class="title-name-style tools">
+                    <h4 class="icon-text">Tools</h4>
+                </span>
+                <span class="title-name-style shapes">
+                    <h4 class="icon-text">Shapes</h4>
+                </span>
+                <span class="title-name-style colors">
+                    <h4 class="icon-text">Colors</h4>
+                </span>
+            </div>
+        </div>
+        <div class="canvas-place">
+            <canvas class="myPaint"></canvas>
+        </div>
+    </div>
+    <script defer type="text/javascript" src="JS/progress.js" charset="utf-8"></script>
+</body>
+
+</html>
